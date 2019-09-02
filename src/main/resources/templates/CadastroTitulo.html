@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8" />
+	<title>Cadastro de Título</title>
+	
+	<!--CSS BOOTSTRAP-->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#">
+	    <img alt="AlgaWorks" src="/images/logo-algaworks.png" />
+	  </a>
+	</nav>
+	
+	<form class="form-group" method="POST" action="/titulos">
+		
+		<div class="card card-titulo">
+			<div class="card-header">Novo Título</div>
+			<div class="card-body">
+				<div class="form-group row">
+					<label for="descricao" class="col-sm-2 col-form-label">Descrição:</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="descricao" name="descricao">
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="dataVencimento" class="col-sm-2 col-form-label">Data de Vencimento:</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="dataVencimento" name="dataVencimento" />
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="valor" class="col-sm-2 col-form-label">Valor:</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="valor" name="valor" />
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label for="status" class="col-sm-2 col-form-label">Status:</label>
+					<div class="col-sm-2">
+						<select class="form-control" id="status" name="status">
+							<option name="PENDENTE">Pendente</option>
+							<option name="RECEBIDO">Recebido</option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<div class="col-sm">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</form>
+
+	<!-- JS BOOTSTRAP  -->
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</body>
+</html>
