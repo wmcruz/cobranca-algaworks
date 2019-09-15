@@ -6,3 +6,7 @@
 label{
 	font-weight: bold;
 }
+
+.alert{
+	margin: 10px;
+}
