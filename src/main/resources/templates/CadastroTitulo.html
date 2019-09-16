@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorator="LayoutPadrao">
 <head>
-	<meta charset="UTF-8" />
 	<title>Cadastro de Título</title>
-	
-	<!--CSS BOOTSTRAP-->
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <a class="navbar-brand" href="#">
-	    <img alt="AlgaWorks" src="/images/logo-algaworks.png" />
-	  </a>
-	</nav>
-	
+<section layout:fragment="conteudo">
 	<form class="form-group" method="POST" action="/titulos">
+		<div class="alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">
+			<span th:text="${mensagem}"></span>
+		</div>
 		
 		<div class="card card-titulo">
 			<div class="card-header">Novo Título</div>
@@ -45,8 +40,7 @@
 					<label for="status" class="col-sm-2 col-form-label">Status:</label>
 					<div class="col-sm-2">
 						<select class="form-control" id="status" name="status">
-							<option name="PENDENTE">Pendente</option>
-							<option name="RECEBIDO">Recebido</option>
+							<option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status}"></option>
 						</select>
 					</div>
 				</div>
@@ -61,8 +55,5 @@
 		</div>
 		
 	</form>
-
-	<!-- JS BOOTSTRAP  -->
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-</body>
+</section>
 </html>
